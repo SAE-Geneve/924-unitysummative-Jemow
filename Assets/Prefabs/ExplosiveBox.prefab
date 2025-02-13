@@ -50,6 +50,7 @@ MonoBehaviour:
   _explosiveMaterial: {fileID: 2100000, guid: 4d7ec067cad161a4f9e0892ef2f3cea1, type: 2}
   _explosiveMaterial2: {fileID: 2100000, guid: 87b0408ea7c7ee045b0171d513bb89df, type: 2}
   _timeToExplode: 2
+  _destroyFX: {fileID: 4743168058491524038, guid: cb2f9c86bdaefa44d87a52a71df973a5, type: 3}
 --- !u!65 &3153008664660440502
 BoxCollider:
   m_ObjectHideFlags: 0

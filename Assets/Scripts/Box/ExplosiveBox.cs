@@ -13,6 +13,9 @@ public class ExplosiveBox : Box
     [Tooltip("The amount of time before exploding when takinbg")]
     [SerializeField] private float _timeToExplode = 3f;
     
+    [Tooltip("The explosion FX to play when destroyed")]
+    [SerializeField] private FX _destroyFX;
+    
     private MeshRenderer _meshRenderer;
     
     
@@ -32,6 +35,8 @@ public class ExplosiveBox : Box
     private IEnumerator ExplodeRoutine()
     {
         yield return new WaitForSeconds(_timeToExplode);
+        
+        Instantiate(_destroyFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
