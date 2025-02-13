@@ -23,7 +23,6 @@ public class BoxSpawner : MonoBehaviour
     public void SpawnBox(Box box)
     {
         _deliveredBox = Instantiate(box, transform.position + _spawnVector, Quaternion.identity, transform);
-        _deliveredBox.OnBoxTake += BoxTaken;
         _sliding = true;
 
         StartCoroutine(BoxSlideTime());
@@ -34,6 +33,4 @@ public class BoxSpawner : MonoBehaviour
         yield return new WaitForSeconds(_slideTime);
         _sliding = false;
     }
-
-    private void BoxTaken() => _deliveredBox = null;
 }

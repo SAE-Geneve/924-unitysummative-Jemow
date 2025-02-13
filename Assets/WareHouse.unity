@@ -4422,7 +4422,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4508493241919028625, guid: 9130ab8c0d1069a4c929d6b19353c89f, type: 3}
       propertyPath: _slideTime
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4508493241919028625, guid: 9130ab8c0d1069a4c929d6b19353c89f, type: 3}
       propertyPath: _boxToSpawn
@@ -10259,7 +10259,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4508493241919028625, guid: 9130ab8c0d1069a4c929d6b19353c89f, type: 3}
       propertyPath: _slideTime
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4508493241919028625, guid: 9130ab8c0d1069a4c929d6b19353c89f, type: 3}
       propertyPath: _boxToSpawn
@@ -14240,7 +14240,7 @@ MonoBehaviour:
   - {fileID: 2936254259753173600, guid: 308a713c6b9cd224da6bda42bbcdeea1, type: 3}
   _gameTime: 120
   _timeBetweenSpawns: 3
-  _boxLeftTmp: {fileID: 1261655257}
+  _boxDeliveredTmp: {fileID: 1261655257}
   _timerTmp: {fileID: 805846010}
 --- !u!1 &1336431642
 GameObject:
@@ -23444,7 +23444,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4508493241919028625, guid: 9130ab8c0d1069a4c929d6b19353c89f, type: 3}
       propertyPath: _slideTime
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4508493241919028625, guid: 9130ab8c0d1069a4c929d6b19353c89f, type: 3}
       propertyPath: _boxToSpawn

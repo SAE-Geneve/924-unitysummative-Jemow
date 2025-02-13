@@ -6,7 +6,7 @@ public class BoxCollector : MonoBehaviour
     {
         if (other.TryGetComponent(out Box box))
         {
-            Destroy(box);
+            Destroy(box.gameObject);
             GameManager.Instance.AddBox();
         }
     }
