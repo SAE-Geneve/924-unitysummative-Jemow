@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _timeBetweenSpawns;
     
     [Header("UI")]
-    [Tooltip("Reference to the BoxLeftTmp")]
-    [SerializeField] private TMP_Text _boxLeftTmp;
+    [Tooltip("Reference to the BoxDeliveredTmp")]
+    [SerializeField] private TMP_Text _boxDeliveredTmp;
     
     [Tooltip("Reference to the TimerTmp")]
     [SerializeField] private TMP_Text _timerTmp;
@@ -66,5 +66,6 @@ public class GameManager : MonoBehaviour
     public void AddBox()
     {
         _boxDelivered++;
+        _boxDeliveredTmp.text = $"Box delivered : {_boxDelivered}";
     }
 }
