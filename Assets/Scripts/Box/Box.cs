@@ -6,12 +6,15 @@ public class Box : MonoBehaviour
 
     public Rigidbody Rb { get; private set; }
 
-    private void Start()
+    protected virtual void Start()
     {
         Rb = GetComponent<Rigidbody>();
         
         BoxManager.Instance.AddBox(this);
     }
 
-    // public void OnTake() => OnBoxTake?.Invoke();
+    public virtual void OnTake()
+    {
+        
+    }
 }
