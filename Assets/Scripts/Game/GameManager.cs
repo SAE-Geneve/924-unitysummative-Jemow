@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
@@ -21,15 +22,21 @@ public class GameManager : MonoBehaviour
     
     [Header("UI")]
     [Tooltip("Reference to the BoxDeliveredTmp")]
-    [SerializeField] private TMP_Text _boxDeliveredTmp;
+    [SerializeField] private TMP_Text _collectedBoxTmp;
     
     [Tooltip("Reference to the TimerTmp")]
     [SerializeField] private TMP_Text _timerTmp;
     
+    [Header("Events")]
+    [SerializeField] private UnityEvent _onGameEnd;
+    
     public static GameManager Instance {get; private set;}
 
-    private float _currentGameTime;
-    private int _boxDelivered = 0;
+    private float _currentGameTime
+        ;
+    private int _collectedBoxes = 0;
+
+    private bool _gameOver;
 
     private void Awake()
     {
@@ -59,13 +66,37 @@ public class GameManager : MonoBehaviour
 
     private void UpdateTime()
     {
+        if(_gameOver) return;
+        
         _currentGameTime -= Time.deltaTime;
+        
+        if (_currentGameTime <= 0)
+        {
+            _currentGameTime = 0;
+            GameOver();
+        }
+        
         _timerTmp.text = _currentGameTime.ToString("0.0");
+    }
+
+    private void GameOver()
+    {
+        _gameOver = true;
+        _onGameEnd?.Invoke();
+        StopAllCoroutines();
+    }
+
+    public void Restart()
+    {
+        _currentGameTime = _gameTime;
+        _collectedBoxes = 0;
+        _gameOver = false;
+        StartCoroutine(BoxSpawnRoutine());
     }
 
     public void AddBox()
     {
-        _boxDelivered++;
-        _boxDeliveredTmp.text = $"Box delivered : {_boxDelivered}";
+        _collectedBoxes++;
+        _collectedBoxTmp.text = $"Collected Box : {_collectedBoxes}";
     }
 }

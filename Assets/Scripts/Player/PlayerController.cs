@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,9 +14,16 @@ public class PlayerController : MonoBehaviour
     private float _speed = 10f;
 
     private Rigidbody _rb;
+    private Vector3 _defaultPosition;
     private Vector2 _direction;
 
-    private void Start() => _rb = GetComponent<Rigidbody>();
+    private void Start()
+    {
+        _rb = GetComponent<Rigidbody>();
+        
+        _defaultPosition = transform.position;
+    }
+
     private void Update()
     {
         if(_direction == Vector2.zero) return;
@@ -26,6 +32,8 @@ public class PlayerController : MonoBehaviour
         _bodyTransform.forward = new Vector3(_direction.x, 0, _direction.y).normalized;
     }
 
+    public void ResetPosition() => transform.position = _defaultPosition;
+    
     public void OnMove(InputAction.CallbackContext context)
     {
         _direction = context.ReadValue<Vector2>();
