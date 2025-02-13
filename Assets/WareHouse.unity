@@ -8560,7 +8560,7 @@ GameObject:
   - component: {fileID: 805846011}
   - component: {fileID: 805846010}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TimerTmp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14101,7 +14101,10 @@ MonoBehaviour:
   - {fileID: 1477043529551052544, guid: ba5818f6694d5fb408f51a8a3d23a384, type: 3}
   - {fileID: 2936254259753173600, guid: 326ce6f439b868a4aabf053e69676b63, type: 3}
   - {fileID: 2936254259753173600, guid: 308a713c6b9cd224da6bda42bbcdeea1, type: 3}
+  _gameTime: 120
   _timeBetweenSpawns: 3
+  _boxLeftTmp: {fileID: 805846010}
+  _timerTmp: {fileID: 805846010}
 --- !u!1 &1336431642
 GameObject:
   m_ObjectHideFlags: 0

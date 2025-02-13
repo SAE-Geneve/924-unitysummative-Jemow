@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,10 +14,34 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Box[] _boxes;
     
     [Header("Parameters")]
+    [Tooltip("The amount of time for the game")]
+    [SerializeField] private float _gameTime = 120f;
     [Tooltip("The amount of time between each box spawn")]
     [SerializeField] private float _timeBetweenSpawns;
+    
+    [Header("UI")]
+    [Tooltip("Reference to the BoxLeftTmp")]
+    [SerializeField] private TMP_Text _boxLeftTmp;
+    
+    [Tooltip("Reference to the TimerTmp")]
+    [SerializeField] private TMP_Text _timerTmp;
+    
+    public static GameManager Instance {get; private set;}
 
-    private void Start() => StartCoroutine(BoxSpawnRoutine());
+    private float _currentGameTime;
+    private int _boxDelivered = 0;
+
+    private void Awake()
+    {
+        if(Instance && Instance != this) Destroy(gameObject);
+        else Instance = this;
+    }
+
+    private void Start()
+    {
+        _currentGameTime = _gameTime;
+        StartCoroutine(BoxSpawnRoutine());
+    } 
 
     private IEnumerator BoxSpawnRoutine()
     {
@@ -24,5 +50,21 @@ public class GameManager : MonoBehaviour
         _boxSpawners[Random.Range(0, _boxSpawners.Length)].SpawnBox(_boxes[Random.Range(0, _boxes.Length)]);
         
         StartCoroutine(BoxSpawnRoutine());
+    }
+
+    private void Update()
+    {
+        UpdateTime();
+    }
+
+    private void UpdateTime()
+    {
+        _currentGameTime -= Time.deltaTime;
+        _timerTmp.text = _currentGameTime.ToString("0.0");
+    }
+
+    public void AddBox()
+    {
+        _boxDelivered++;
     }
 }
