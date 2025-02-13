@@ -54,6 +54,8 @@ public class BoxCatcher : MonoBehaviour
 
                 _catchedBox.GetComponent<Rigidbody>().isKinematic = true;
                 
+                _catchedBox.OnTake();
+                
                 return;
 
             }
