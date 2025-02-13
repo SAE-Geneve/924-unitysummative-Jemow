@@ -14451,7 +14451,7 @@ MonoBehaviour:
   - {fileID: 1477043529551052544, guid: ba5818f6694d5fb408f51a8a3d23a384, type: 3}
   - {fileID: 2936254259753173600, guid: 326ce6f439b868a4aabf053e69676b63, type: 3}
   - {fileID: 2936254259753173600, guid: 308a713c6b9cd224da6bda42bbcdeea1, type: 3}
-  _gameTime: 10
+  _gameTime: 60
   _timeBetweenSpawns: 3
   _collectedBoxTmp: {fileID: 1261655257}
   _timerTmp: {fileID: 805846010}

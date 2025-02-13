@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         if(_direction == Vector2.zero) return;
         
-        _rb.position += (transform.forward * _direction.y + transform.right * _direction.x) * (_speed * Time.deltaTime);
+        _rb.position += transform.forward * (_direction.y * _speed * Time.deltaTime) + transform.right * (_direction.x * _speed * Time.deltaTime);
         _bodyTransform.forward = new Vector3(_direction.x, 0, _direction.y).normalized;
     }
 
