@@ -9,8 +9,6 @@ public class BoxSpawner : MonoBehaviour
     
     [Tooltip("Define how much time the box will slide at the beginning")]
     [SerializeField] private float _slideTime = 0.5f;
-    
-    [SerializeField] private Box _boxToSpawn;
 
     private Box _deliveredBox;
 

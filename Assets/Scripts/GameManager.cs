@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(_timeBetweenSpawns);
         
-        _boxSpawners[Random.Range(0, _boxSpawners.Length)].SpawnBox(_boxes[0]);
+        _boxSpawners[Random.Range(0, _boxSpawners.Length)].SpawnBox(_boxes[Random.Range(0, _boxes.Length)]);
         
         StartCoroutine(BoxSpawnRoutine());
     }
