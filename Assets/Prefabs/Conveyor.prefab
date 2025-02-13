@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5303416298913488072}
+  - component: {fileID: 1993248781277364060}
   m_Layer: 0
   m_Name: Conveyor
   m_TagString: Conveyor
@@ -34,6 +35,27 @@ Transform:
   - {fileID: 1040341806041980021}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1993248781277364060
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5947072971624635122}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.39593065, z: 2.0168488}
+  m_Center: {x: 0, y: 0.19789004, z: 0.9952148}
 --- !u!1 &6732004240971252646
 GameObject:
   m_ObjectHideFlags: 0

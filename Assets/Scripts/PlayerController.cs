@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,13 +13,16 @@ public class PlayerController : MonoBehaviour
     [Tooltip("The speed of the player")] 
     [SerializeField]
     private float _speed = 10f;
+
+    private Rigidbody _rb;
     private Vector2 _direction;
 
+    private void Start() => _rb = GetComponent<Rigidbody>();
     private void Update()
     {
         if(_direction == Vector2.zero) return;
         
-        transform.position += (transform.forward * _direction.y + transform.right * _direction.x) * (_speed * Time.deltaTime);
+        _rb.position += (transform.forward * _direction.y + transform.right * _direction.x) * (_speed * Time.deltaTime);
         _bodyTransform.forward = new Vector3(_direction.x, 0, _direction.y).normalized;
     }
 
