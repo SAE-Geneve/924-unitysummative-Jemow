@@ -21,11 +21,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _timeBetweenSpawns;
     
     [Header("UI")]
-    [Tooltip("Reference to the BoxDeliveredTmp")]
+    [Tooltip("Reference to the CollectedBoxTmp")]
     [SerializeField] private TMP_Text _collectedBoxTmp;
     
     [Tooltip("Reference to the TimerTmp")]
     [SerializeField] private TMP_Text _timerTmp;
+    
+    [Tooltip("Reference to the CollectedBoxEndTmp")]
+    [SerializeField] private TMP_Text _collectedBoxEndTmp;
     
     [Header("Events")]
     [SerializeField] private UnityEvent _onGameEnd;
@@ -82,6 +85,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         _gameOver = true;
+        _collectedBoxEndTmp.text = $"You collected {_collectedBoxes} boxes!";
         _onGameEnd?.Invoke();
         StopAllCoroutines();
     }
