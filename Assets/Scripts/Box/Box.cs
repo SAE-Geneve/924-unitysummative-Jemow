@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Box : MonoBehaviour
@@ -7,7 +6,12 @@ public class Box : MonoBehaviour
 
     public Rigidbody Rb { get; private set; }
 
-    private void Start() => Rb = GetComponent<Rigidbody>();
+    private void Start()
+    {
+        Rb = GetComponent<Rigidbody>();
+        
+        BoxManager.Instance.AddBox(this);
+    }
 
     // public void OnTake() => OnBoxTake?.Invoke();
 }
